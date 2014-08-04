@@ -1,0 +1,47 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("tgdmb.com") {
+
+    /* CSS Mobile Reset */
+html, body
+{
+ margin: 0;
+ padding: 0; 
+ border: 0;
+}
+
+body 
+{
+ font-family:Arial,  sans-serif;
+ line-height:1.5;
+ font-size:16px;
+ background: #fff;
+ padding:5px;
+ color: #000;
+ word-wrap: break-word;
+ -webkit-text-size-adjust: none;
+}
+
+h1, h2, h3, h4, h5, h6{ font-weight: normal; }
+
+p img { float: left; margin: 0 10px 5px 0; padding: 0; }
+
+img { border: 0; max-width: 100%; }
+
+table { width:auto; border-collapse: collapse;border-spacing: 0; }
+    
+.forumline tr th:nth-child(3), .forumline tr th:nth-child(4) ,.forumline tr th:nth-child(5),
+.forumline tr td:nth-child(3), .forumline tr td:nth-child(4) ,.forumline tr td:nth-child(5) { 
+        display: none;
+}
+
+    .forumline td .topictitle {
+        font-size: 100%;
+    }
+    .forumline td .gensmall a {
+        font-size: 200%; 
+        padding: 2%;
+    }
+    
+    /* end of mozilla style */
+}
