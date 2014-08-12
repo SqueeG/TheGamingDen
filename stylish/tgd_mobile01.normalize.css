@@ -415,18 +415,18 @@ th {
  */
 
   table {
-    width: 100%;
+   /* width: 100%; */
   }
   
-tr, td {
-  display: block;
-  width: 100%;
-  height: auto !important;
-}
+  tr, td {
+    display: block;
+    width: 100%;
+    height: auto !important;
+  }
   
   td.row1 .gensmall,
   td.row2 .gensmall {
-    display: block;
+  /*  display: block; */
   }
   
   td.row2,
@@ -506,6 +506,8 @@ tr, td {
  .bodyline td:nth-child(6){
     display: table-cell;
  } 
+  
+ .bodyline span.gensmall br { display: none; }
   /* End sub forum styles */
 }
 
