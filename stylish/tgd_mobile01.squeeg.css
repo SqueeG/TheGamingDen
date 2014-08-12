@@ -29,12 +29,22 @@ p img { float: left; margin: 0 10px 5px 0; padding: 0; }
 img { border: 0; max-width: 100%; }
 
 table { width:auto; border-collapse: collapse;border-spacing: 0; }
+
+table { width: 100%; }
     
+.forumline tr { display: block; }
+.forumline tr td { display: inline-block; width: 100%; font-size: 150%; }
+.forumline tr th:nth-child(1) {  }    
 .forumline tr th:nth-child(3), .forumline tr th:nth-child(4) ,.forumline tr th:nth-child(5),
 .forumline tr td:nth-child(3), .forumline tr td:nth-child(4) ,.forumline tr td:nth-child(5) { 
         display: none;
+        width: 0;
 }
 
+    .forumline td.row3Right {
+      /*  width: 20%;*/
+    }
+    
     .forumline td .topictitle {
         font-size: 100%;
     }
