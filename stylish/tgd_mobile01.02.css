@@ -98,12 +98,9 @@
 	*/
 	.helpline { background-color: #DEE3E7; border-style: none; }
 
-}
-
-/* ====================================
-				Index Styles	(100% = 1 em ~= 16px ~= 14pt)
-======================================*/
-@-moz-document url-prefix("http://tgdmb.com") {
+/* ===========================================================
+				PX to EM
+============================================================ */	
 
 	hr	{ height: 0; border: solid #D1D7DC 0; border-top-width: 0.0625em;}
 
@@ -211,6 +208,49 @@
 		font-size: 0.6875em; font-family: Verdana, Arial, Helvetica, sans-serif;
 	}
 
+/* =============================================================
+				Custom mobile changes
+============================================================= */
+
+	img { max-width: 50rem;} /* Fix huge images breaking posts */
+
+	.bodyline table:nth-child(1) img[alt="The Gaming Den Forum Index"] { width: 10em; }
+
+	.forumline {
+	    display: block;
+	    max-width: 100% !important;
+	    width: 100% !important;
+	}
+
+	.forumline tr,
+	.forumline td { display: block; width: 100%; height: auto !important; }
+
+	.forumline tr td,
+	.forumline tr td span { width: 100%; }
+
+	.forumline td:nth-child(1) { display : none; }
+
+	.forumline tbody tr td:nth-child(2) {  display: block; height: auto !important; margin: 0; -moz-column-count: 3;}
+
+  	.forumline td:nth-child(3),
+ 	.forumline td:nth-child(4),
+	.forumline td:nth-child(5) {
+		display: table-cell;
+	}
+
+
+/* =============================================================
+				End main sheet
+============================================================= */
+}
+
+/* ====================================
+				Index Styles	(100% = 1 em ~= 16px ~= 14pt)
+======================================*/
+@-moz-document url-prefix("http://tgdmb.com") {
+
+
+
 }
 
 
@@ -226,5 +266,82 @@
 				Thread Styles
 ======================================*/
 @-moz-document url-prefix("http://tgdmb.com/viewtopic.php") {
+
+	.quote { font-size: 0.6875rem; }
+	.postbody { font-size : 0.75rem; line-height: 1.125rem}
+
+	.forumline td:nth-child(1) { display : table-cell; }
+
+	 td.row1,
+  td.row2,
+  td.row3,
+  td.row3Right {
+   display: table-cell;
+  }
   
+  .forumline tr td.row1:nth-child(1),
+  .forumline tr td.row2:nth-child(1) {
+    background: red;
+    max-width: 20%;
+  }
+  
+  .forumline tr td.row1:nth-child(2),
+  .forumline tr td.row2:nth-child(2) {
+    width: 100%
+  }
+  
+  img {
+    max-width:800px;
+  }
+  
+  a.name {
+    font-size: larger;
+  }
+  
+  .bodyline .row1 {
+    display: table-cell;
+  }
+  
+  .forumline td[width="150"] {
+    display: table-cell !important;
+    margin: 0;
+    padding: 0 0 0 0;
+    background: yellow !important;
+    width: 100% !important;
+  }
+  
+    .forumline td[width="150"] span {
+      display: inline-block;
+      position: relative;
+    }
+  
+    .forumline td[width="150"] br {
+      display: none;
+    }
+  
+    .forumline td[width="150"] img {
+      max-width: 50px;
+      padding : 0 .5em;
+    }
+  
+  .forumline td[height="28"].row2 {
+    display: block; 
+  }
+  
+  span.postbody {
+    line-height: 125%;
+    font-size: 1.5em !important;
+  }
+  
+  .forumline td span.postbody span[style] {
+      display: inline;
+      font-size: 1em;
+      padding: 1em 0;
+  }
+  
+  .bodyline td.quote {
+    display: block;
+    font-size: 24px !important;
+    padding: 1em;
+  }
 }
