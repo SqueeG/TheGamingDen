@@ -1,251 +1,302 @@
 @-moz-document domain("tgdmb.com") {
 
-	/* General font families for common tags */
-	font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
-	a:link,a:active,a:visited { color : #006699; }
-	a:hover		{ text-decoration: underline; color : #DD6900; }
+/* =============================================================
+        Start "normalize"
+============================================================== */
+
+  /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+  /**
+   * 1. Set default font family to sans-serif.
+   * 2. Prevent iOS text size adjust after orientation change, without disabling
+   *    user zoom.
+   */
+
+  html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-size: 62.5%;
+  }
+
+  /**
+   * Remove default margin.
+   */
+
+  body {
+    margin: 0;
+  }
+
+  /* Tables
+     ========================================================================== */
+
+  /**
+   * Remove most spacing between table cells.
+   */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  td,
+  th {
+    padding: 0;
+  }
+
+/* =============================================================
+        End "normalize"
+============================================================== */
+
+  /* General font families for common tags */
+  font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+  a:link,a:active,a:visited { color : #006699; }
+  a:hover     { text-decoration: underline; color : #DD6900; }
 
 
-	/* Main table cell colours and backgrounds */
-	td.row1	{ background-color: #EFEFEF; }
-	td.row2	{ background-color: #DEE3E7; }
-	td.row3	{ background-color: #D1D7DC; }
+  /* Main table cell colours and backgrounds */
+  td.row1 { background-color: #EFEFEF; }
+  td.row2 { background-color: #DEE3E7; }
+  td.row3 { background-color: #D1D7DC; }
 
-	/*
-		This is for the table cell above the Topics, Post & Last posts on the index.php page
-		By default this is the fading out gradiated silver background.
-		However, you could replace this with a bitmap specific for each forum
-	*/
-	td.rowpic {
-			background-color: #FFFFFF;
-			background-image: url(templates/subSilver/images/cellpic2.jpg);
-			background-repeat: repeat-y;
-	}
+  /*
+    This is for the table cell above the Topics, Post & Last posts on the index.php page
+    By default this is the fading out gradiated silver background.
+    However, you could replace this with a bitmap specific for each forum
+  */
+  td.rowpic {
+      background-color: #FFFFFF;
+    /*  background-image: url(templates/subSilver/images/cellpic2.jpg);*/
+      background-repeat: repeat-y;
+  }
 
-	
-	td.row3Right,td.spaceRow {
-		background-color: #D1D7DC; border: #FFFFFF; border-style: solid;
-	}
+  
+  td.row3Right,td.spaceRow {
+    background-color: #D1D7DC; border: #FFFFFF; border-style: solid;
+  }
 
-	
-	.gen,.genmed,.gensmall { color : #000000; }
-	a.gen,a.genmed,a.gensmall { color: #006699; text-decoration: none; }
-	a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
-
-
-	a.mainmenu		{ text-decoration: none; color : #006699;  }
-	a.mainmenu:hover{ text-decoration: underline; color : #DD6900; }
-
-	/* Forum category titles */
-	
-	a.cattitle		{ text-decoration: none; color : #006699; }
-	a.cattitle:hover{ text-decoration: underline; }
-
-	/* Forum title: Text and link to the forums used in: index.php */
-
-	a.forumlink 	{ text-decoration: none; color : #006699; }
-	a.forumlink:hover{ text-decoration: underline; color : #DD6900; }
-
-	/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
-	
-	a.nav			{ text-decoration: none; color : #006699; }
-	a.nav:hover		{ text-decoration: underline; }
-
-	/* titles for the topics: could specify viewed link colour too */
-
-	a.topictitle:link   { text-decoration: none; color : #006699; }
-	a.topictitle:visited { text-decoration: none; color : #5493B4; }
-	a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
+  
+  .gen,.genmed,.gensmall { color : #000000; }
+  a.gen,a.genmed,a.gensmall { color: #006699; text-decoration: none; }
+  a.gen:hover,a.genmed:hover,a.gensmall:hover { color: #DD6900; text-decoration: underline; }
 
 
+  a.mainmenu      { text-decoration: none; color : #006699;  }
+  a.mainmenu:hover{ text-decoration: underline; color : #DD6900; }
+
+  /* Forum category titles */
+  
+  a.cattitle      { text-decoration: none; color : #006699; }
+  a.cattitle:hover{ text-decoration: underline; }
+
+  /* Forum title: Text and link to the forums used in: index.php */
+
+  a.forumlink     { text-decoration: none; color : #006699; }
+  a.forumlink:hover{ text-decoration: underline; color : #DD6900; }
+
+  /* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+  
+  a.nav           { text-decoration: none; color : #006699; }
+  a.nav:hover     { text-decoration: underline; }
+
+  /* titles for the topics: could specify viewed link colour too */
+
+  a.topictitle:link   { text-decoration: none; color : #006699; }
+  a.topictitle:visited { text-decoration: none; color : #5493B4; }
+  a.topictitle:hover  { text-decoration: underline; color : #DD6900; }
 
 
-	a.postlink:link	{ text-decoration: none; color : #006699 }
-	a.postlink:visited { text-decoration: none; color : #5493B4; }
-	a.postlink:hover { text-decoration: underline; color : #DD6900}
 
-	
 
-	/* Copyright and bottom info */
+  a.postlink:link { text-decoration: none; color : #006699 }
+  a.postlink:visited { text-decoration: none; color : #5493B4; }
+  a.postlink:hover { text-decoration: underline; color : #DD6900}
 
-	a.copyright		{ color: #444444; text-decoration: none;}
-	a.copyright:hover { color: #000000; text-decoration: underline;}
+  
 
-	
+  /* Copyright and bottom info */
 
-	/* The text input fields background colour */
-	input.post, textarea.post, select {
-		background-color : #FFFFFF;
-	}
+  a.copyright     { color: #444444; text-decoration: none;}
+  a.copyright:hover { color: #000000; text-decoration: underline;}
 
-	
+  
 
-	/* The main submit button option */
-	input.mainoption {
-		background-color : #FAFAFA;
-		font-weight : bold;
-	}
+  /* The text input fields background colour */
+  input.post, textarea.post, select {
+    background-color : #FFFFFF;
+  }
 
-	/* None-bold submit button */
-	input.liteoption {
-		background-color : #FAFAFA;
-		font-weight : normal;
-	}
+  
 
-	/* This is the line in the posting page which shows the rollover
-		help line. This is actually a text box, but if set to be the same
-		colour as the background no one will know ;)
-	*/
-	.helpline { background-color: #DEE3E7; border-style: none; }
+  /* The main submit button option */
+  input.mainoption {
+    background-color : #FAFAFA;
+    font-weight : bold;
+  }
+
+  /* None-bold submit button */
+  input.liteoption {
+    background-color : #FAFAFA;
+    font-weight : normal;
+  }
+
+  /* This is the line in the posting page which shows the rollover
+    help line. This is actually a text box, but if set to be the same
+    colour as the background no one will know ;)
+  */
+  .helpline { background-color: #DEE3E7; border-style: none; }
 
 /* ===========================================================
-				PX to EM
-============================================================ */	
+        PX to EM
+============================================================ */ 
 
-	hr	{ height: 0; border: solid #D1D7DC 0; border-top-width: 0.0625em;}
+  hr  { height: 0; border: solid #D1D7DC 0; border-top-width: 0.1em;}
 
-	/* This is the border line & background colour round the entire page */
-	.bodyline	{ background-color: #FFFFFF; border: .0625em #98AAB1 solid; }
+  /* This is the border line & background colour round the entire page */
+  .bodyline   { background-color: #FFFFFF; border: .1em #98AAB1 solid; }
 
-	/* This is the outline round the main forum tables */
-	.forumline	{ background-color: #FFFFFF; border: 0.125em #006699 solid; }
+  /* This is the outline round the main forum tables */
+  .forumline  { background-color: #FFFFFF; border: .2em #006699 solid; }
 
-	/* Header cells - the blue and silver gradient backgrounds */
-	th	{
-		color: #FFA34F; font-size: 0.6875em; font-weight : bold;
-		background-color: #006699; height: 1.5625em;
-		background-image: url(templates/subSilver/images/cellpic3.gif);
-	}
+  /* Header cells - the blue and silver gradient backgrounds */
+  th  {
+    color: #FFA34F; font-size: 1.1em; font-weight : bold;
+    background-color: #006699; height: 1.5625em;
+  /*  background-image: url(templates/subSilver/images/cellpic3.gif);*/
+  }
 
-	td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
-		background-image: url(templates/subSilver/images/cellpic1.gif);
-		background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 1.75em;
-	}
-	
-	/*
-		Setting additional nice inner borders for the main table cells.
-		The names indicate which sides the border will be on.
-		Don't worry if you don't understand this, just ignore it :-)
-	*/
-	td.cat,td.catHead,td.catBottom {
-		height: 1.8125em;
-		border-width: 0;
-	}
-	th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
-		font-weight: bold; border: #FFFFFF; border-style: solid; height: 1.75em;
-	}
+  td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+  /*  background-image: url(templates/subSilver/images/cellpic1.gif);*/
+    background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 1.75em;
+  }
+  
+  /*
+    Setting additional nice inner borders for the main table cells.
+    The names indicate which sides the border will be on.
+    Don't worry if you don't understand this, just ignore it :-)
+  */
+  td.cat,td.catHead,td.catBottom {
+    height: 2.9em;
+    border-width: 0;
+  }
+  th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+    font-weight: bold; border: #FFFFFF; border-style: solid; height: 1.75em;
+  }
 
-	th.thHead,td.catHead { font-size: .75em; border-width: 0.0625em 0.0625em 0 0.0625em; }
-	
-	th.thHead,td.catHead { font-size: 0.75em; border-width: 0.0625em  0.0625em  0 0.0625em ; }
-	th.thSides,td.catSides,td.spaceRow	 { border-width: 0 0.0625em  0 0.0625em ; }
-	th.thRight,td.catRight,td.row3Right	 { border-width: 0 0.0625em  0 0; }
-	th.thLeft,td.catLeft	  { border-width: 0 0 0 0.0625em ; }
-	th.thBottom,td.catBottom  { border-width: 0 0.0625em  0.0625em  0.0625em ; }
-	th.thTop	 { border-width: 0.0625em  0 0 0; }
-	th.thCornerL { border-width: 0.0625em  0 0 0.0625em ; }
-	th.thCornerR { border-width: 0.0625em  0.0625em  0 0; }
+  th.thHead,td.catHead { font-size: .75em; border-width: 0.1em 0.1em 0 0.1em; }
+  
+  th.thHead,td.catHead { font-size: 1.2em; border-width: 0.1em  0.1em  0 0.1em ; }
+  th.thSides,td.catSides,td.spaceRow   { border-width: 0 0.1em  0 0.1em ; }
+  th.thRight,td.catRight,td.row3Right  { border-width: 0 0.1em  0 0; }
+  th.thLeft,td.catLeft      { border-width: 0 0 0 0.1em ; }
+  th.thBottom,td.catBottom  { border-width: 0 0.1em  0.1em  0.1em ; }
+  th.thTop     { border-width: 0.1em  0 0 0; }
+  th.thCornerL { border-width: 0.1em  0 0 0.1em ; }
+  th.thCornerR { border-width: 0.1em  0.1em  0 0; }
 
-	/* The largest text used in the index page title and toptic title etc. */
-	.maintitle	{
-		font-weight: bold; font-size: 1.375em; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
-		text-decoration: none; line-height : 120%; color : #000000;
-	}
+  /* The largest text used in the index page title and toptic title etc. */
+  .maintitle  {
+    font-weight: bold; font-size: 2.2em; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none; line-height : 120%; color : #000000;
+  }
 
-	/* General text */
-	.gen { font-size : 0.75em; }
-	.genmed { font-size : 0.6875em; }
-	.gensmall { font-size : 0.625em; }
+  /* General text */
+  .gen { font-size : 1.2em; }
+  .genmed { font-size : 1.1em; }
+  .gensmall { font-size : 1em; }
 
-	/* The register, login, search etc links at the top of the page */
-	.mainmenu		{ font-size : 0.6875em; color : #000000 }
+  /* The register, login, search etc links at the top of the page */
+  .mainmenu       { font-size : 1.1em; color : #000000 }
 
-	.cattitle		{ font-weight: bold; font-size: 0.75em ; letter-spacing: 0.0625em; color : #006699}
+  .cattitle       { font-weight: bold; font-size: 1.2em ; letter-spacing: 0.1em; color : #006699}
 
-	.forumlink { font-weight: bold; font-size: 0.75em; color : #006699; }
+  .forumlink { font-weight: bold; font-size: 1.2em; color : #006699; }
 
-	.nav { font-weight: bold; font-size: 0.6875em; color : #000000;}
+  .nav { font-weight: bold; font-size: 1.1em; color : #000000;}
 
-	.topictitle,h1,h2	{ font-weight: bold; font-size: 0.6875em; color : #000000; }
+  .topictitle,h1,h2   { font-weight: bold; font-size: 1.1em; color : #000000; }
 
-	/* Name of poster in viewmsg.php and viewtopic.php and other places */
-	.name			{ font-size : 0.6875em; color : #000000;}
+  /* Name of poster in viewmsg.php and viewtopic.php and other places */
+  .name           { font-size : 1.1em; color : #000000;}
 
-	/* Location, number of posts, post date etc */
-	.postdetails		{ font-size : 0.625em; color : #000000; }	
+  /* Location, number of posts, post date etc */
+  .postdetails        { font-size : 1em; color : #000000; }   
 
-	/* The content of the posts (body of text) */
-	.postbody { font-size : 0.75em; line-height: 1.125em}
+  /* The content of the posts (body of text) */
+  .postbody { font-size : 1.2em; line-height: 1.125em}
 
-	/* Quote & Code blocks */
-	.code {
-		font-family: Courier, 'Courier New', sans-serif; font-size: 0.6875em; color: #006600;
-		background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
-		border-left-width: 0.0625em; border-top-width: 0.0625em; border-right-width: 0.0625em; border-bottom-width: 0.0625em
-	}
+  /* Quote & Code blocks */
+  .code {
+    font-family: Courier, 'Courier New', sans-serif; font-size: 1.1em; color: #006600;
+    background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+    border-left-width: 0.1em; border-top-width: 0.1em; border-right-width: 0.1em; border-bottom-width: 0.1em
+  }
 
-	.quote {
-		font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 0.6875em; color: #444444; line-height: 125%;
-		background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
-		border-left-width: 0.0625em; border-top-width: 0.0625em; border-right-width: 0.0625em; border-bottom-width: 0.0625em
-	}
+  .quote {
+    font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 1.1em; color: #444444; line-height: 125%;
+    background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+    border-left-width: 0.1em; border-top-width: 0.1em; border-right-width: 0.1em; border-bottom-width: 0.1em
+  }
 
-	.copyright		{ font-size: 0.625em; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -0.0625em;}
+  .copyright      { font-size: 1em; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -0.1em;}
 
-	/* Form elements */
-	input,textarea, select {
-		color : #000000;
-		font: normal 0.6875em Verdana, Arial, Helvetica, sans-serif;
-		border-color : #000000;
-	}
+  /* Form elements */
+  input,textarea, select {
+    color : #000000;
+    font: normal 1.1em Verdana, Arial, Helvetica, sans-serif;
+    border-color : #000000;
+  }
 
-	input { text-indent : 2px; }
+  input { text-indent : 2px; }
 
-	/* The buttons used for bbCode styling in message post */
-	input.button {
-		background-color : #EFEFEF;
-		color : #000000;
-		font-size: 0.6875em; font-family: Verdana, Arial, Helvetica, sans-serif;
-	}
+  /* The buttons used for bbCode styling in message post */
+  input.button {
+    background-color : #EFEFEF;
+    color : #000000;
+    font-size: 1.1em; font-family: Verdana, Arial, Helvetica, sans-serif;
+  }
 
 /* =============================================================
-				Custom mobile changes
+        Custom mobile changes
 ============================================================= */
 
-	img { max-width: 50rem;} /* Fix huge images breaking posts */
+  img { max-width: 50rem;} /* Fix huge images breaking posts */
 
-	.bodyline table:nth-child(1) img[alt="The Gaming Den Forum Index"] { width: 10em; }
+  .bodyline table:nth-child(1) img[alt="The Gaming Den Forum Index"] { width: 10em; }
 
-	.forumline {
-	    display: block;
-	    max-width: 100% !important;
-	    width: 100% !important;
-	}
+  .forumline {
+    display: block;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 
-	.forumline tr,
-	.forumline td { display: block; width: 100%; height: auto !important; }
+  .forumline tr,
+  .forumline td { display: block; width: 100%; height: auto !important; }
 
-	.forumline tr td,
-	.forumline tr td span { width: 100%; }
+  .forumline tr td,
+  .forumline tr td span { width: 100%; }
 
-	.forumline td:nth-child(1) { display : none; }
+  .forumline tr:nth-child(1),
+  .forumline tr:nth-child(2) { display : none; }
 
-	.forumline tbody tr td:nth-child(2) {  display: block; height: auto !important; margin: 0; -moz-column-count: 3;}
+  .forumline td:nth-child(1) { display : none; }
 
-  	.forumline td:nth-child(3),
- 	.forumline td:nth-child(4),
-	.forumline td:nth-child(5) {
-		display: table-cell;
-	}
+  .forumline tbody tr td:nth-child(2) {  display: block; height: auto !important; margin: 0; -moz-column-count: 3;}
+
+  .forumline td:nth-child(3),
+  .forumline td:nth-child(4),
+  .forumline td:nth-child(5) {
+    display: table-cell;
+  }
 
 
 /* =============================================================
-				End main sheet
+        End main sheet
 ============================================================= */
 }
 
 /* ====================================
-				Index Styles	(100% = 1 em ~= 16px ~= 14pt)
+        Index Styles    (62.5% = 1 em ~= 10px ~= 8pt)
 ======================================*/
 @-moz-document url-prefix("http://tgdmb.com") {
 
@@ -255,28 +306,43 @@
 
 
 /* ====================================
-				Subforum Styles
+        Subforum Styles
 ======================================*/
 @-moz-document url-prefix("http://tgdmb.com/viewforum.php") {
+/* Start sub forum styles */
 
+  .bodyline td:nth-child(1) {
+    display: none;
+  }
+    
+  .bodyline td:nth-child(3),
+  .bodyline td:nth-child(4),
+  .bodyline td:nth-child(5),
+  .bodyline td:nth-child(6){
+    display: table-cell;
+  } 
+  
+  .bodyline span.gensmall br { display: none; }
+
+/* End sub forum styles */
 }
 
 
 /* ====================================
-				Thread Styles
+        Thread Styles
 ======================================*/
 @-moz-document url-prefix("http://tgdmb.com/viewtopic.php") {
 
-	.quote { font-size: 0.6875rem; }
-	.postbody { font-size : 0.75rem; line-height: 1.125rem}
+  .quote { font-size: 0.6875rem; }
+  .postbody { font-size : 0.75rem; line-height: 1.125rem}
 
-	.forumline td:nth-child(1) { display : table-cell; }
+  .forumline td:nth-child(1) { display : table-cell; }
 
-	 td.row1,
+  td.row1,
   td.row2,
   td.row3,
   td.row3Right {
-   display: table-cell;
+    display: table-cell;
   }
   
   .forumline tr td.row1:nth-child(1),
@@ -291,15 +357,15 @@
   }
   
   img {
-    max-width:800px;
+  max-width:800px;
   }
   
   a.name {
-    font-size: larger;
+  font-size: larger;
   }
   
   .bodyline .row1 {
-    display: table-cell;
+  display: table-cell;
   }
   
   .forumline td[width="150"] {
@@ -310,22 +376,22 @@
     width: 100% !important;
   }
   
-    .forumline td[width="150"] span {
-      display: inline-block;
-      position: relative;
-    }
+  .forumline td[width="150"] span {
+    display: inline-block;
+    position: relative;
+  }
   
-    .forumline td[width="150"] br {
-      display: none;
-    }
+  .forumline td[width="150"] br {
+    display: none;
+  }
   
-    .forumline td[width="150"] img {
-      max-width: 50px;
-      padding : 0 .5em;
-    }
+  .forumline td[width="150"] img {
+    max-width: 50px;
+    padding : 0 .5em;
+  }
   
   .forumline td[height="28"].row2 {
-    display: block; 
+  display: block; 
   }
   
   span.postbody {
@@ -334,9 +400,9 @@
   }
   
   .forumline td span.postbody span[style] {
-      display: inline;
-      font-size: 1em;
-      padding: 1em 0;
+    display: inline;
+    font-size: 1em;
+    padding: 1em 0;
   }
   
   .bodyline td.quote {

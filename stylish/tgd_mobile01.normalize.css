@@ -496,18 +496,21 @@ th {
 }
 
 @-moz-document url-prefix("http://tgdmb.com/viewforum.php") {
- .bodyline td:nth-child(1) {
-   display: none;
- }
-  
- .bodyline td:nth-child(3),
- .bodyline td:nth-child(4),
- .bodyline td:nth-child(5),
- .bodyline td:nth-child(6){
+  /* Start sub forum styles */
+
+  .bodyline td:nth-child(1) {
+    display: none;
+  }
+    
+  .bodyline td:nth-child(3),
+  .bodyline td:nth-child(4),
+  .bodyline td:nth-child(5),
+  .bodyline td:nth-child(6){
     display: table-cell;
- } 
-  
- .bodyline span.gensmall br { display: none; }
+  } 
+    
+  .bodyline span.gensmall br { display: none; }
+
   /* End sub forum styles */
 }
 
@@ -550,19 +553,19 @@ th {
     width: 100% !important;
   }
   
-    .forumline td[width="150"] span {
-      display: inline-block;
-      position: relative;
-    }
+  .forumline td[width="150"] span {
+    display: inline-block;
+    position: relative;
+  }
   
-    .forumline td[width="150"] br {
-      display: none;
-    }
+  .forumline td[width="150"] br {
+    display: none;
+  }
   
-    .forumline td[width="150"] img {
-      max-width: 50px;
-      padding : 0 .5em;
-    }
+  .forumline td[width="150"] img {
+    max-width: 50px;
+    padding : 0 .5em;
+  }
   
   .forumline td[height="28"].row2 {
     display: block; 
