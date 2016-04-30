@@ -1,0 +1,1831 @@
+// ==UserScript==
+// @name       TGD @mention
+// @namespace  http://codeglaze.com
+// @version    0.1
+// @description  Modern enhancements to The Gaming Den!
+// @include    http://*tgdmb.com/*
+// @require    http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
+// @require    https://cdn.rawgit.com/jakiestfu/Mention.js/master/bootstrap-typeahead.js
+/* @require    https://cdn.rawgit.com/sidazhou/Mention.js/master/mention.js*/
+// @copyright  2015+, codeGlaze
+// ==/UserScript==
+(function(e){e.fn.extend({mention:function(t){this.opts={users:[],delimiter:"@",sensitive:true,queryBy:["name","username"],typeaheadOpts:{}};var n=e.extend({},this.opts,t),r=function(){if(typeof e=="undefined"){throw new Error("jQuery is Required")}else{if(typeof e.fn.typeahead=="undefined"){throw new Error("Typeahead is Required")}}return true},
+i=function(e,t){var r;for(r=t;r>=0;r--){if(e[r]==n.delimiter){break}}return e.substring(r,t)},
+s=function(e){var t;for(t in n.queryBy){if(e[n.queryBy[t]]){var r=e[n.queryBy[t]].toLowerCase(),i=this.query.toLowerCase().match(new RegExp(n.delimiter+"\\w+","g")),s;if(!!i){for(s=0;s<i.length;s++){
+    var o=i[s].substring(1).toLowerCase(),u=new RegExp(n.delimiter+r,"g"),a=this.query.toLowerCase().match(u);if(r.indexOf(o)!=-1&&a===null){return true}}}}}},
+    o=function(e){var t=this.query,r=this.$element[0].selectionStart,i;for(i=r;i>=0;i--){if(t[i]==n.delimiter){break}}var s=t.substring(i,r),o=t.substring(0,i),u=t.substring(r),t=o+n.delimiter+e+u;this.tempQuery=t;return "[b]"+t+"[/b]"},
+    u=function(e){if(e.length&&n.sensitive){var t=i(this.query,this.$element[0].selectionStart).substring(1),r,s=e.length,o={highest:[],high:[],med:[],low:[]},
+    u=[];if(t.length==1){for(r=0;r<s;r++){var a=e[r];if(a.username[0]==t){o.highest.push(a)}else if(a.username[0].toLowerCase()==t.toLowerCase()){o.high.push(a)}else if(a.username.indexOf(t)!=-1){o.med.push(a)}else{o.low.push(a)}}for(r in o){var f;for(f in o[r]){u.push(o[r][f])}}
+ u}}return e},
+ a=function(t){var r=this;t=e(t).map(function(t,i){t=e(r.options.item).attr("data-value",i.username);var s=e("<div />");if(i.image){s.append('<img class="mention_image" src="'+i.image+'">')}if(i.name){s.append('<b class="mention_name">'+i.name+"</b>")}if(i.username){s.append('<span class="mention_username"> '+n.delimiter+i.username+"</span>")}t.find("a").html(r.highlighter(s.html()));return t[0]});t.first().addClass("active");this.$menu.html(t);return this};
+ e.fn.typeahead.Constructor.prototype.render=a;return this.each(function(){var t=e(this);if(r()){t.typeahead(e.extend({source:n.users,matcher:s,updater:o,sorter:u},n.typeaheadOpts))}})}})})(jQuery)
+
+$(document).ready(function(){
+   $("textarea").mention({
+        delimiter: '@',
+        emptyQuery: true,
+        typeaheadOpts: {
+            items: 10 // Max number of items you want to show
+        },
+        sensitive: true,
+        users: [{
+                username: "...You Lost Me"
+            },
+            {
+                username: "8d8"
+            },
+            {
+                username: "8headeddragon"
+            },
+            {
+                username: "A Hammer"
+            },
+            {
+                username: "A Man In Black"
+            },
+            {
+                username: "Absentminded_Wizard"
+            },
+            {
+                username: "ACOS"
+            },
+            {
+                username: "adamjury"
+            },
+            {
+                username: "Agrinja"
+            },
+            {
+                username: "Aharon"
+            },
+            {
+                username: "Akiosama"
+            },
+            {
+                username: "Aktariel"
+            },
+            {
+                username: "Akula"
+            },
+            {
+                username: "Alansmithee"
+            },
+            {
+                username: "AlexandraErin"
+            },
+            {
+                username: "Alhadis"
+            },
+            {
+                username: "Almaz"
+            },
+            {
+                username: "AlphaNerd"
+            },
+            {
+                username: "Amethyst_Butterfly"
+            },
+            {
+                username: "Amra"
+            },
+            {
+                username: "Ancient History"
+            },
+            {
+                username: "AndreiChekov"
+            },
+            {
+                username: "andreww"
+            },
+            {
+                username: "angelfromanotherpin"
+            },
+            {
+                username: "Angry_Pessimist"
+            },
+            {
+                username: "Anguirus"
+            },
+            {
+                username: "animea90"
+            },
+            {
+                username: "Ant"
+            },
+            {
+                username: "Antariuk"
+            },
+            {
+                username: "Antumbra"
+            },
+            {
+                username: "Apalala"
+            },
+            {
+                username: "Archmage"
+            },
+            {
+                username: "Archmage Joda"
+            },
+            {
+                username: "areola"
+            },
+            {
+                username: "Artless"
+            },
+            {
+                username: "Aryxbez"
+            },
+            {
+                username: "Asbestos Underwear"
+            },
+            {
+                username: "Atmo"
+            },
+            {
+                username: "Avoraciopoctules"
+            },
+            {
+                username: "Axebird"
+            },
+            {
+                username: "Aycarus"
+            },
+            {
+                username: "baduin"
+            },
+            {
+                username: "BearsAreBrown"
+            },
+            {
+                username: "BeeRockxs"
+            },
+            {
+                username: "Benjamin"
+            },
+            {
+                username: "Beth_Naught"
+            },
+            {
+                username: "Bigode"
+            },
+            {
+                username: "Bihlbo"
+            },
+            {
+                username: "Bill Bisco: Isometric Imp"
+            },
+            {
+                username: "bitnine"
+            },
+            {
+                username: "Blade"
+            },
+            {
+                username: "Blasted"
+            },
+            {
+                username: "Blicero"
+            },
+            {
+                username: "Bobikus"
+            },
+            {
+                username: "Book"
+            },
+            {
+                username: "bosssmiley"
+            },
+            {
+                username: "Boulie_98"
+            },
+            {
+                username: "bourdain89"
+            },
+            {
+                username: "BoxCrayonTales"
+            },
+            {
+                username: "brized"
+            },
+            {
+                username: "Brobdingnagian"
+            },
+            {
+                username: "Caedrus"
+            },
+            {
+                username: "Caid"
+            },
+            {
+                username: "Caldazar"
+            },
+            {
+                username: "Calibron"
+            },
+            {
+                username: "CalibronXXX"
+            },
+            {
+                username: "canamrock"
+            },
+            {
+                username: "CapnTthePirateG"
+            },
+            {
+                username: "Captain_Bleach"
+            },
+            {
+                username: "Captain_Karzak"
+            },
+            {
+                username: "CaptPike"
+            },
+            {
+                username: "Carcharoth"
+            },
+            {
+                username: "Catharz"
+            },
+            {
+                username: "Catharz_Godsfoot"
+            },
+            {
+                username: "CatharzGodfoot"
+            },
+            {
+                username: "CCarter"
+            },
+            {
+                username: "Centurion13"
+            },
+            {
+                username: "Chamomile"
+            },
+            {
+                username: "chaosfang"
+            },
+            {
+                username: "Cheiromancer"
+            },
+            {
+                username: "Cielingcat"
+            },
+            {
+                username: "ckafrica"
+            },
+            {
+                username: "clef"
+            },
+            {
+                username: "Clutch9800"
+            },
+            {
+                username: "codeGlaze"
+            },
+            {
+                username: "Concise Locket"
+            },
+            {
+                username: "CondorDM"
+            },
+            {
+                username: "Corsair114"
+            },
+            {
+                username: "Count Arioch the 28th"
+            },
+            {
+                username: "Count Geiger"
+            },
+            {
+                username: "Covent"
+            },
+            {
+                username: "CraigM"
+            },
+            {
+                username: "crasskris"
+            },
+            {
+                username: "Crawfish"
+            },
+            {
+                username: "crazysamaritan"
+            },
+            {
+                username: "Crimson Lancer"
+            },
+            {
+                username: "Critias"
+            },
+            {
+                username: "crizh"
+            },
+            {
+                username: "CryptoSolipsist"
+            },
+            {
+                username: "cthulhu"
+            },
+            {
+                username: "cthulhudarren"
+            },
+            {
+                username: "Cyberzombie"
+            },
+            {
+                username: "Cynic"
+            },
+            {
+                username: "da_chicken"
+            },
+            {
+                username: "Daddy Warpig"
+            },
+            {
+                username: "Daiba"
+            },
+            {
+                username: "Damocles"
+            },
+            {
+                username: "Danchild"
+            },
+            {
+                username: "darkmaster"
+            },
+            {
+                username: "Darth Rabbitt"
+            },
+            {
+                username: "Darwinism"
+            },
+            {
+                username: "Data Vampire"
+            },
+            {
+                username: "Datawolf"
+            },
+            {
+                username: "Daztur"
+            },
+            {
+                username: "dbb"
+            },
+            {
+                username: "deaddmwalking"
+            },
+            {
+                username: "DeadlyReed"
+            },
+            {
+                username: "Dean"
+            },
+            {
+                username: "deathdealingjawa"
+            },
+            {
+                username: "Deathfork"
+            },
+            {
+                username: "Desdan_Mervolam"
+            },
+            {
+                username: "Digestor"
+            },
+            {
+                username: "dkfather"
+            },
+            {
+                username: "DMReckless"
+            },
+            {
+                username: "Doctor Kenny Loggins"
+            },
+            {
+                username: "Dog Quixote"
+            },
+            {
+                username: "Dogbert"
+            },
+            {
+                username: "Dominicius"
+            },
+            {
+                username: "Don Strudel"
+            },
+            {
+                username: "Doom"
+            },
+            {
+                username: "downzorz"
+            },
+            {
+                username: "DP"
+            },
+            {
+                username: "Dr_Noface"
+            },
+            {
+                username: "Drachasor"
+            },
+            {
+                username: "Draco_Argentum"
+            },
+            {
+                username: "DracoNova"
+            },
+            {
+                username: "Draculmaulkee"
+            },
+            {
+                username: "Drago0661"
+            },
+            {
+                username: "Dragon Instincts"
+            },
+            {
+                username: "Dragon_Child"
+            },
+            {
+                username: "DragonChild"
+            },
+            {
+                username: "Drolyt"
+            },
+            {
+                username: "DrPraetor"
+            },
+            {
+                username: "DSMatticus"
+            },
+            {
+                username: "Duke Flauros"
+            },
+            {
+                username: "duo31"
+            },
+            {
+                username: "Echoes"
+            },
+            {
+                username: "echoVanguard"
+            },
+            {
+                username: "Ecureuil_Diabolique"
+            },
+            {
+                username: "Ed"
+            },
+            {
+                username: "eeuuugh"
+            },
+            {
+                username: "Eikre"
+            },
+            {
+                username: "Ektagliaresia"
+            },
+            {
+                username: "Elennsar"
+            },
+            {
+                username: "Emerald"
+            },
+            {
+                username: "endersdouble"
+            },
+            {
+                username: "Endovior"
+            },
+            {
+                username: "erik"
+            },
+            {
+                username: "Essence"
+            },
+            {
+                username: "ETortoise"
+            },
+            {
+                username: "Falgund"
+            },
+            {
+                username: "Fallen Hero"
+            },
+            {
+                username: "fatmonkey13"
+            },
+            {
+                username: "FatR"
+            },
+            {
+                username: "fbmf"
+            },
+            {
+                username: "fearsomepirate"
+            },
+            {
+                username: "fectin"
+            },
+            {
+                username: "Fenrisulfr"
+            },
+            {
+                username: "Ferret"
+            },
+            {
+                username: "Finder"
+            },
+            {
+                username: "Finkin"
+            },
+            {
+                username: "flare22"
+            },
+            {
+                username: "fliprushman"
+            },
+            {
+                username: "For Valor"
+            },
+            {
+                username: "Foxwarrior"
+            },
+            {
+                username: "FrankTrollman",
+                name: "Frank"
+            },
+            {
+                username: "Fuchs"
+            },
+            {
+                username: "Fucks"
+            },
+            {
+                username: "Fuzzy_logic"
+            },
+            {
+                username: "Fwib"
+            },
+            {
+                username: "Galahad_Knight"
+            },
+            {
+                username: "gamerGoyf"
+            },
+            {
+                username: "Ganbare Gincun"
+            },
+            {
+                username: "GâtFromKI"
+            },
+            {
+                username: "Gelare"
+            },
+            {
+                username: "ggroy"
+            },
+            {
+                username: "Ghostwheel"
+            },
+            {
+                username: "GhostWhoTalks"
+            },
+            {
+                username: "Ghremdal"
+            },
+            {
+                username: "Giraffeking"
+            },
+            {
+                username: "GnomeWorks"
+            },
+            {
+                username: "Gnorman"
+            },
+            {
+                username: "Gnorman"
+            },
+            {
+                username: "Gnosticism Is A Hoot"
+            },
+            {
+                username: "Gnyahaha"
+            },
+            {
+                username: "God_of_Awesome"
+            },
+            {
+                username: "Gods_Trick"
+            },
+            {
+                username: "Goldor"
+            },
+            {
+                username: "gourdcaptain"
+            },
+            {
+                username: "gp1628"
+            },
+            {
+                username: "GreatGreyShrike"
+            },
+            {
+                username: "Grek"
+            },
+            {
+                username: "grey_muse"
+            },
+            {
+                username: "Griffinsummoner"
+            },
+            {
+                username: "Guyr Adamantine"
+            },
+            {
+                username: "Gx1080"
+            },
+            {
+                username: "Hadanelith"
+            },
+            {
+                username: "HalcyonUmbra"
+            },
+            {
+                username: "Halloween Jack"
+            },
+            {
+                username: "hamstertamer"
+            },
+            {
+                username: "Harlune"
+            },
+            {
+                username: "Harshax"
+            },
+            {
+                username: "Heath Robinson"
+            },
+            {
+                username: "Heaven's Thunder Hammer"
+            },
+            {
+                username: "Heisenberg"
+            },
+            {
+                username: "hermit"
+            },
+            {
+                username: "Hey_I_Can_Chan"
+            },
+            {
+                username: "Hicks"
+            },
+            {
+                username: "Hieronymous Rex"
+            },
+            {
+                username: "Hiram McDaniels"
+            },
+            {
+                username: "hogarth"
+            },
+            {
+                username: "Hotpants Joe"
+            },
+            {
+                username: "hyzmarca"
+            },
+            {
+                username: "Iaimeki"
+            },
+            {
+                username: "iambane"
+            },
+            {
+                username: "ibanez"
+            },
+            {
+                username: "Ice9"
+            },
+            {
+                username: "icyshadowlord"
+            },
+            {
+                username: "IGTN"
+            },
+            {
+                username: "Ikeren"
+            },
+            {
+                username: "Imban"
+            },
+            {
+                username: "Immortius"
+            },
+            {
+                username: "imperialspectre"
+            },
+            {
+                username: "Incarnadine"
+            },
+            {
+                username: "infected slut princess"
+            },
+            {
+                username: "Insomniac"
+            },
+            {
+                username: "Interested2"
+            },
+            {
+                username: "internet_superbot"
+            },
+            {
+                username: "Irish"
+            },
+            {
+                username: "Iron Mongler"
+            },
+            {
+                username: "ishy"
+            },
+            {
+                username: "Istred"
+            },
+            {
+                username: "Itay K"
+            },
+            {
+                username: "Jack_Lurch"
+            },
+            {
+                username: "Jacob_Orlove"
+            },
+            {
+                username: "jadagul"
+            },
+            {
+                username: "Jay Levine"
+            },
+            {
+                username: "JDSorenson"
+            },
+            {
+                username: "JeanPat"
+            },
+            {
+                username: "Jerry"
+            },
+            {
+                username: "JesterZero"
+            },
+            {
+                username: "JigokuBosatsu"
+            },
+            {
+                username: "Jilocasin"
+            },
+            {
+                username: "jimbojones1971"
+            },
+            {
+                username: "John Magnum"
+            },
+            {
+                username: "Jonathan_Drain"
+            },
+            {
+                username: "JongWK"
+            },
+            {
+                username: "josephbt"
+            },
+            {
+                username: "Josh_Kablack"
+            },
+            {
+                username: "Joy_Division"
+            },
+            {
+                username: "Judging__Eagle"
+            },
+            {
+                username: "Just another user"
+            },
+            {
+                username: "Juton"
+            },
+            {
+                username: "K",
+                name: "K the Prince"
+            },
+            {
+                username: "Kaelik"
+            },
+            {
+                username: "KaNT"
+            },
+            {
+                username: "KauTZ"
+            },
+            {
+                username: "Kemper Boyd"
+            },
+            {
+                username: "Kirin_Corrigan"
+            },
+            {
+                username: "Kithkanan"
+            },
+            {
+                username: "kjdavies"
+            },
+            {
+                username: "knasser"
+            },
+            {
+                username: "Kobajagrande"
+            },
+            {
+                username: "Korgan0"
+            },
+            {
+                username: "Korwin"
+            },
+            {
+                username: "Kot"
+            },
+            {
+                username: "Koumei"
+            },
+            {
+                username: "krainboltgreene"
+            },
+            {
+                username: "Krakatoa"
+            },
+            {
+                username: "Krusk"
+            },
+            {
+                username: "Kurama314"
+            },
+            {
+                username: "Kuri Näkk"
+            },
+            {
+                username: "kzt"
+            },
+            {
+                username: "Laertes"
+            },
+            {
+                username: "Lago PARANOIA"
+            },
+            {
+                username: "Lago_AM3P"
+            },
+            {
+                username: "LargePrime"
+            },
+            {
+                username: "LeadPal"
+            },
+            {
+                username: "Leetkeis"
+            },
+            {
+                username: "Leper"
+            },
+            {
+                username: "Leress"
+            },
+            {
+                username: "Lev Lafayette"
+            },
+            {
+                username: "Libertad"
+            },
+            {
+                username: "Lich-Loved"
+            },
+            {
+                username: "lighttigersoul"
+            },
+            {
+                username: "Login"
+            },
+            {
+                username: "Lokathor"
+            },
+            {
+                username: "Longes"
+            },
+            {
+                username: "Lord Mistborn"
+            },
+            {
+                username: "LR"
+            },
+            {
+                username: "luckyfortune"
+            },
+            {
+                username: "ludomastro"
+            },
+            {
+                username: "Machine_Kiss"
+            },
+            {
+                username: "maddd0g"
+            },
+            {
+                username: "maglag"
+            },
+            {
+                username: "MagnaSecuris"
+            },
+            {
+                username: "magnuskn"
+            },
+            {
+                username: "Maj"
+            },
+            {
+                username: "malak"
+            },
+            {
+                username: "mandrake"
+            },
+            {
+                username: "Manxome"
+            },
+            {
+                username: "martian_bob"
+            },
+            {
+                username: "MartinHarper"
+            },
+            {
+                username: "Mask_De_H"
+            },
+            {
+                username: "Mauver"
+            },
+            {
+                username: "Maxus"
+            },
+            {
+                username: "mean_liar"
+            },
+            {
+                username: "Meikle641"
+            },
+            {
+                username: "MfA"
+            },
+            {
+                username: "MGuy"
+            },
+            {
+                username: "Midnight_v"
+            },
+            {
+                username: "mikal768"
+            },
+            {
+                username: "Miryafa"
+            },
+            {
+                username: "Mister_Sinister"
+            },
+            {
+                username: "MisterDee"
+            },
+            {
+                username: "mlangsdorf"
+            },
+            {
+                username: "ModelCitizen"
+            },
+            {
+                username: "Modesitt"
+            },
+            {
+                username: "Mole_2"
+            },
+            {
+                username: "Molochio"
+            },
+            {
+                username: "momothefiddler"
+            },
+            {
+                username: "Morat"
+            },
+            {
+                username: "Mord"
+            },
+            {
+                username: "Morzas"
+            },
+            {
+                username: "Mr Shine"
+            },
+            {
+                username: "Mr. Bane"
+            },
+            {
+                username: "Mr. GC"
+            },
+            {
+                username: "MrWaeseL"
+            },
+            {
+                username: "Murtak"
+            },
+            {
+                username: "Mystic Mongol"
+            },
+            {
+                username: "Naar"
+            },
+            {
+                username: "Nachtigallerator"
+            },
+            {
+                username: "name_here"
+            },
+            {
+                username: "Naszir"
+            },
+            {
+                username: "Nath"
+            },
+            {
+                username: "NativeJovian"
+            },
+            {
+                username: "Nebuchadnezzar"
+            },
+            {
+                username: "Neeeek"
+            },
+            {
+                username: "Neeek"
+            },
+            {
+                username: "neilhuiz"
+            },
+            {
+                username: "Neon Sequitur"
+            },
+            {
+                username: "Nicklance"
+            },
+            {
+                username: "Nidhogg"
+            },
+            {
+                username: "Night Goat"
+            },
+            {
+                username: "Nihlin"
+            },
+            {
+                username: "nikita"
+            },
+            {
+                username: "Niles"
+            },
+            {
+                username: "NineInchNall"
+            },
+            {
+                username: "nockermensch"
+            },
+            {
+                username: "NoDot"
+            },
+            {
+                username: "NoobCrusher"
+            },
+            {
+                username: "norms29"
+            },
+            {
+                username: "nova88"
+            },
+            {
+                username: "Novembermike"
+            },
+            {
+                username: "npc310"
+            },
+            {
+                username: "Oberoni"
+            },
+            {
+                username: "Occluded Sun"
+            },
+            {
+                username: "OgreBattle"
+            },
+            {
+                username: "Omegonthesane"
+            },
+            {
+                username: "OmniaNigrum"
+            },
+            {
+                username: "Orca"
+            },
+            {
+                username: "Orion"
+            },
+            {
+                username: "OrionAnderson"
+            },
+            {
+                username: "Otakusensei"
+            },
+            {
+                username: "Parthenon"
+            },
+            {
+                username: "Pedantic"
+            },
+            {
+                username: "PennyShaman"
+            },
+            {
+                username: "PhaedrusXY"
+            },
+            {
+                username: "phlapjackage"
+            },
+            {
+                username: "PhoneLobster"
+            },
+            {
+                username: "Pixels"
+            },
+            {
+                username: "Plague of Hats"
+            },
+            {
+                username: "Plebian"
+            },
+            {
+                username: "PoliteNewb"
+            },
+            {
+                username: "power_word_wedgie"
+            },
+            {
+                username: "pragma"
+            },
+            {
+                username: "Prak"
+            },
+            {
+                username: "Previn"
+            },
+            {
+                username: "Princess"
+            },
+            {
+                username: "Pseudo Stupidity"
+            },
+            {
+                username: "Psifon"
+            },
+            {
+                username: "Psychic Robot"
+            },
+            {
+                username: "psychognome"
+            },
+            {
+                username: "Pulsewidth"
+            },
+            {
+                username: "quanta"
+            },
+            {
+                username: "Quantumboost"
+            },
+            {
+                username: "Rabelais"
+            },
+            {
+                username: "raben-aas"
+            },
+            {
+                username: "RadiantPhoenix"
+            },
+            {
+                username: "radthemad4"
+            },
+            {
+                username: "Ramnza"
+            },
+            {
+                username: "rampaging-poet"
+            },
+            {
+                username: "RandomCasualty"
+            },
+            {
+                username: "RandomCasualty2"
+            },
+            {
+                username: "rapa-nui"
+            },
+            {
+                username: "rapanui"
+            },
+            {
+                username: "rasmuswagner"
+            },
+            {
+                username: "Rathe"
+            },
+            {
+                username: "Ravengm"
+            },
+            {
+                username: "Ravyn Dawnbringer"
+            },
+            {
+                username: "Rawbeard"
+            },
+            {
+                username: "Red Archon"
+            },
+            {
+                username: "Red Lantern"
+            },
+            {
+                username: "Red_Rob"
+            },
+            {
+                username: "Redshirt"
+            },
+            {
+                username: "RedstoneOrc"
+            },
+            {
+                username: "Reg06"
+            },
+            {
+                username: "Rejakor"
+            },
+            {
+                username: "RelentlessImp"
+            },
+            {
+                username: "Reynard"
+            },
+            {
+                username: "RiotGearEpsilon"
+            },
+            {
+                username: "Rob_Knotts"
+            },
+            {
+                username: "RobbyPants"
+            },
+            {
+                username: "RobG"
+            },
+            {
+                username: "Roog"
+            },
+            {
+                username: "Roxolan"
+            },
+            {
+                username: "Roy"
+            },
+            {
+                username: "RufusCorvus"
+            },
+            {
+                username: "sabs"
+            },
+            {
+                username: "Sajber"
+            },
+            {
+                username: "sake"
+            },
+            {
+                username: "Sakuya Izayoi"
+            },
+            {
+                username: "Sam"
+            },
+            {
+                username: "sandmann"
+            },
+            {
+                username: "Sarandosil"
+            },
+            {
+                username: "sarcasmoverdose"
+            },
+            {
+                username: "Sashi"
+            },
+            {
+                username: "Save_versus_Stupid"
+            },
+            {
+                username: "Saxony"
+            },
+            {
+                username: "Schleiermacher"
+            },
+            {
+                username: "schpeelah"
+            },
+            {
+                username: "Schwarzkopf"
+            },
+            {
+                username: "ScottS"
+            },
+            {
+                username: "Scrivener"
+            },
+            {
+                username: "Seerow"
+            },
+            {
+                username: "Semerkhet"
+            },
+            {
+                username: "setmonster"
+            },
+            {
+                username: "Severian"
+            },
+            {
+                username: "SGamerz"
+            },
+            {
+                username: "Shadow Balls"
+            },
+            {
+                username: "Shady314"
+            },
+            {
+                username: "shadzar"
+            },
+            {
+                username: "Shatner"
+            },
+            {
+                username: "shau"
+            },
+            {
+                username: "Shazbot79"
+            },
+            {
+                username: "shinimasu"
+            },
+            {
+                username: "shirak"
+            },
+            {
+                username: "Shiritai"
+            },
+            {
+                username: "Shoggoth"
+            },
+            {
+                username: "Shokatsuryou"
+            },
+            {
+                username: "Shrapnel"
+            },
+            {
+                username: "Sigil"
+            },
+            {
+                username: "sigma999"
+            },
+            {
+                username: "Silent Wayfarer"
+            },
+            {
+                username: "silva"
+            },
+            {
+                username: "Simon Rogers"
+            },
+            {
+                username: "Sir Neil"
+            },
+            {
+                username: "Sirocco"
+            },
+            {
+                username: "SirWayne"
+            },
+            {
+                username: "Slade"
+            },
+            {
+                username: "SlyJohnny"
+            },
+            {
+                username: "Sma"
+            },
+            {
+                username: "Smeelbo"
+            },
+            {
+                username: "Smeelbo"
+            },
+            {
+                username: "Smirnoffico"
+            },
+            {
+                username: "smug"
+            },
+            {
+                username: "Sock Puppet"
+            },
+            {
+                username: "socrates999"
+            },
+            {
+                username: "Soda"
+            },
+            {
+                username: "souran"
+            },
+            {
+                username: "Soyweiser"
+            },
+            {
+                username: "spaceLem"
+            },
+            {
+                username: "Spaghetti Western"
+            },
+            {
+                username: "spasheridan"
+            },
+            {
+                username: "SphereOfFeetMan"
+            },
+            {
+                username: "Spike"
+            },
+            {
+                username: "spongeknight"
+            },
+            {
+                username: "squirrelloid"
+            },
+            {
+                username: "Stahlseele"
+            },
+            {
+                username: "Starmaker"
+            },
+            {
+                username: "Stinktopus"
+            },
+            {
+                username: "StormBringer"
+            },
+            {
+                username: "Strung Nether"
+            },
+            {
+                username: "Stubbazubba"
+            },
+            {
+                username: "SubversionArts"
+            },
+            {
+                username: "SuicideChump"
+            },
+            {
+                username: "SunTzuWarmaster"
+            },
+            {
+                username: "Surgo"
+            },
+            {
+                username: "Swordslinger"
+            },
+            {
+                username: "T"
+            },
+            {
+                username: "Tador"
+            },
+            {
+                username: "Tae_Kwon_Dan"
+            },
+            {
+                username: "Taharqa"
+            },
+            {
+                username: "Taishan"
+            },
+            {
+                username: "Taleran"
+            },
+            {
+                username: "Talisman"
+            },
+            {
+                username: "talozin"
+            },
+            {
+                username: "Tanis"
+            },
+            {
+                username: "TarkisFlux"
+            },
+            {
+                username: "TarlSS"
+            },
+            {
+                username: "TavishArtair"
+            },
+            {
+                username: "technomancer"
+            },
+            {
+                username: "Ted the Flayer"
+            },
+            {
+                username: "tenngu"
+            },
+            {
+                username: "tenuki"
+            },
+            {
+                username: "Tequila Sunrise"
+            },
+            {
+                username: "The 13 Wise Buttlords"
+            },
+            {
+                username: "The Lunatic Fringe"
+            },
+            {
+                username: "The Man Who Killed Death"
+            },
+            {
+                username: "The Vigilante"
+            },
+            {
+                username: "The Yann Waters"
+            },
+            {
+                username: "The_Hanged_Man"
+            },
+            {
+                username: "The_Matthew"
+            },
+            {
+                username: "the_taken"
+            },
+            {
+                username: "the_unthinkable"
+            },
+            {
+                username: "TheDarkFuzz"
+            },
+            {
+                username: "TheFlatline"
+            },
+            {
+                username: "TheJerkStore"
+            },
+            {
+                username: "TheNotoriousAMP"
+            },
+            {
+                username: "TheNotSoEvilNecromancer"
+            },
+            {
+                username: "TheWorid"
+            },
+            {
+                username: "theye1"
+            },
+            {
+                username: "ThinkWriteMute"
+            },
+            {
+                username: "Thoth_Amon"
+            },
+            {
+                username: "Thymos"
+            },
+            {
+                username: "TiaC"
+            },
+            {
+                username: "tic"
+            },
+            {
+                username: "Titanium Dragon"
+            },
+            {
+                username: "TNT90"
+            },
+            {
+                username: "Tokorona"
+            },
+            {
+                username: "Tomawis"
+            },
+            {
+                username: "Torko"
+            },
+            {
+                username: "TOZ"
+            },
+            {
+                username: "traverse"
+            },
+            {
+                username: "Treantmonklvl20"
+            },
+            {
+                username: "TRQ"
+            },
+            {
+                username: "Tshern"
+            },
+            {
+                username: "Tsuzua"
+            },
+            {
+                username: "Tumbling Down"
+            },
+            {
+                username: "tussock"
+            },
+            {
+                username: "Tydanosaurus"
+            },
+            {
+                username: "tzor"
+            },
+            {
+                username: "ubernoob"
+            },
+            {
+                username: "UmaroVI"
+            },
+            {
+                username: "unnamednpc"
+            },
+            {
+                username: "User"
+            },
+            {
+                username: "Utterfail"
+            },
+            {
+                username: "vagrant"
+            },
+            {
+                username: "Vebyast"
+            },
+            {
+                username: "Verbannon"
+            },
+            {
+                username: "Verisimilitudinous"
+            },
+            {
+                username: "violence in the media"
+            },
+            {
+                username: "virgil"
+            },
+            {
+                username: "VladtheLad"
+            },
+            {
+                username: "Vnonymous"
+            },
+            {
+                username: "Voss"
+            },
+            {
+                username: "Wesley Street"
+            },
+            {
+                username: "Whatever"
+            },
+            {
+                username: "Whipstitch"
+            },
+            {
+                username: "Windjammer"
+            },
+            {
+                username: "Winnah"
+            },
+            {
+                username: "Wiseman"
+            },
+            {
+                username: "wotmaniac"
+            },
+            {
+                username: "WPharolin"
+            },
+            {
+                username: "Wrathzog"
+            },
+            {
+                username: "Wrenfield"
+            },
+            {
+                username: "Wulf"
+            },
+            {
+                username: "Wulfbanes"
+            },
+            {
+                username: "Wyzzard"
+            },
+            {
+                username: "Xander77"
+            },
+            {
+                username: "Xaos"
+            },
+            {
+                username: "xechnao"
+            },
+            {
+                username: "Xenologer"
+            },
+            {
+                username: "Xur"
+            },
+            {
+                username: "xXOblivionXx"
+            },
+            {
+                username: "Yahzi"
+            },
+            {
+                username: "Yep"
+            },
+            {
+                username: "Yugo"
+            },
+            {
+                username: "zach"
+            },
+            {
+                username: "Zak S"
+            },
+            {
+                username: "Zaranthan"
+            },
+            {
+                username: "Zeezy"
+            },
+            {
+                username: "Zeir"
+            },
+            {
+                username: "ZER0"
+            },
+            {
+                username: "zeruslord"
+            },
+            {
+                username: "Zherog"
+            },
+            {
+                username: "Zinegata"
+            },
+            {
+                username: "zugschef"
+            },
+            {
+                username: "Zurai"
+        }]
+    });
+});

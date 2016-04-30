@@ -457,11 +457,11 @@ th {
         padding: .5em .75em;
       }
   
-    .forumline td span {
-      display: inline-block;
-      padding: .75em 1em;
-      font-size: 1.25em;
-   }
+  .forumline td span {
+    display: inline-block;
+    padding: .75em 1em;
+    font-size: 1.25em;
+  }
   
   .forumline {
     display: block;
@@ -469,9 +469,9 @@ th {
     width: 100% !important;
   }
   
-    .forumline td span.gensmall {
-      font-size: 1.75em;
-    }
+  .forumline td span.gensmall {
+    font-size: 1.75em;
+  }
   
   .forumline td span a.forumlink,
   .forumline td span a.topictitle{
@@ -507,6 +507,7 @@ th {
   .bodyline td:nth-child(5),
   .bodyline td:nth-child(6){
     display: table-cell;
+    width: 100%;
   } 
     
   .bodyline span.gensmall br { display: none; }

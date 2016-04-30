@@ -1,0 +1,79 @@
+[Thread source on TGD](http://tgdmb.com/viewtopic.php?t=56122&start=25)
+
+## Basic Breakdown
+via [Orion](http://tgdmb.com/viewtopic.php?p=444018#444018)
+
+**This is not new information, but perhaps you will find it helpful. Let's talk about:**
+
+* The chance of rolling "12" on 2d6
+* The chance of rolling "doubles" on 2d6
+* The chance of rolling "8" on 2d6
+* The chance of rolling "At least 10" on 2d6
+* The chance of rolling "at least one 6" on 4 dice
+* The chance of rolling "at least one 5+" on 4 dice
+* The chance of rolling "exactly 1" 5+ on 4 dice
+* The chance of rolling "at least 2 5+" on 4 dice
+
+Bonus Round: The chance of getting the same number twice in a row on 2d6.
+
+### The chance of getting "12"
+If two events don't affect each other, **multiply** the chance of each event together.
+
+1. To get `12` on 2d6, you need to roll `6, 6`
+1. Each die has a `1/6 chance` of rolling 6
+1. The chance that both dice roll 6 is `1/6*1/6`, or `1/36`.
+
+### Rolling 12
+If more than one event is acceptable, **add** the chances of each.
+
+1. Rolling 12 is one of 6 equally-likely ways to get "doubles"
+1. so the chance of doubles is 6 times greater, or 1/6
+
+**Another way to think about this one:**
+* no matter what number you rolled on your first die, the next die has a 1 in 6 chance to match
+    * (we'll come back to this technique)
+
+#### When you add two dice together, there's more than one way to get the same total. You add up the chance of each way (often called a "case").
+
+* With dice, each case is equally likely. Start by listing off the ways to roll 8. If you got "2,6; 3,5; 4,4" you done fucked up because you forgot about "5,3; and 6, 2". Even if you don't care about the order events happen in, you have to include every order in your calculation. There are 5 ways to get 8 and 36 ways to roll 2 dice, so your odds are 5/36.
+
+* (This means that if you flip a coin twice, you're twice as likely to get one heads and one tails as to get 2 tails. As a child, I found this brain-breakingly weird, but it's true. In gaming terms, your W/U magic deck gets 1 island, 1 plains half the time)
+
+#### Checking for 10+ is another case of adding multiple events.
+
+* You just add (chance of 10) + (chance of 11) + (chance of 12) = (chance of 10+). When you add multiple dice, you get a "bell curve" where events get less likely at the extremes. 2d6 actually has a smooth and memorable distribution. 6/36 at the center (7), -1/36 per step to the outside. You can get 10 3 ways (4,6; 5,5; 6,4) 11 2 ways (5,6; 6,5) and 12 one way (6,6) so the odds of a 10+ are 3+2+1/36, or 1/6 again.
+
+--
+So much for adding dice. On to dice pools. This is weirder, because the dice aren't really independent in the same way as before. No die influences the number that comes up on another die, but it influences the chance that we care.
+--
+
+***
+### It's Arkham Horror and you're Cursed, which means you only hit on a 6. You have 4 dice and you need 1 hit to succeed.
+
+* What's your chance? Each die has a 1 in 6 chance, and you get 4 of them, so you might think you have a 4 in 6 chance, but you would be tragically mistaken. You will get an average of 4/6 hits, but sometimes you'll get multiple hits on the same roll, which is a waste. To solve this kind of problem, you often need to think backwards. Instead of asking for your chance to succeed, ask for your chance to fail. That's easier, because succeeding required you to roll a "6" at least once, but failing requires you to roll "not 6" every time. We're back to multiplying independent events. The chance of "not 6" on one die is 5/6. the chance of "not 6" 4 times in a row is. 5/6*5/6*5/6*5/6. That's equivalent to 5*5*5*5/6*6*6*6, or 625/1296. Your chance to succeed is the the reverse of that -- 671/1296 or about 52%.
+
+**If you hit on 5+, the rules are the same, you're just rolling for "4 or less" instead of "not 6." The fail chance is 2/3 to the 4th power, which is 16/81, or 19.7%. The success chance is 80.3%.**
+
+#### The chance of exactly one hit is a huge pain to calculate.
+
+* When the dice all affect each other in a complicated way, you need to look at "branches" of a "probability tree" (like branching parallel worlds.) Another way to think about it: make assumptions to simplify it, but then go back and adjust for the chance your assumption holds. Let's assume that the 1st die is a hit. If the first die hits, you need all 3 of the other dice to miss. By now you should know how to do this one: there's 8/27 chance of 3 misses in a row. Now, go back and remember that the first die only hits 1/3 times. So the chance of a hit (1/3) followed by 3 misses (8/27) is (8*1)/27*3), or 8/81. (That's 9.9%).
+* To put it another way, "There is a 9.9% chance that the first die, and only the first die, is a hit).
+* But! You are rolling 4 dice, and any one of them could be your "only hit." You also need to consider the chance of "only the second die hits" "only the third die hits" and "only the fourth die hits." The good news is that these cases never overlap. You can't have 2 "only hits," so you just add them together. You get exactly one hit 32/81, or 39.5% of the time.
+
+#### If you need multiple hits, calculate the chance of each number of hits (chance for 0 hits, chance for 1 hit, chance for 2 hits, etc.) and add the relevant ones.
+
+* We already know the chance of zero hits is 19.7%. We also know the chance of exactly 1 hit is 39.5%. The chance of "0 or 1 hits" is 19.7+39.5, or 59.2%. The chance of "two, three, or four hits" is 40.8%.
+
+#### Bonus Round: What are the odds of getting the same number twice in a row on 2d6? This belonged in the 2d6 sections, but it's harder than the rest so I moved it. Also, it makes dice interact in similar ways to what we just saw.
+
+* This would be a really easy question if we cared about the order dice rolled in. If "3, then 5" were different from "5, then 3", each result would have a 1/36 chance. No matter what result you got on the first roll, there would be a 1/36 chance of getting it again, so a 1/36 chance of getting the same result twice. This is like the doubles question.
+* However, because we didn't track order, we saw that you were way more likely to get a 7 than an 11. This makes a big difference, and you can see why if you tell yourself a story (use a probability tree). Suppose you've already made your first roll, and it's a 7. Now, your chance of a repeat is pretty decent. Your next roll needs to be a 7, and that's the most likely number. On the other hand, suppose you already made your first roll was a 12. Now you're screwed, because you're making your next roll hoping for 12, and that hardly ever happens. Now, remember that the first story (I already rolled a 7, and I feel okay about trying for another one) happens way more often than the second story (I already rolled a 12, and I feel terrible about trying for another one.)
+* At this point, you're gonna have to add up the chance of each kind of "repeat." "7, 7" happens 1 in 36 times, because you need a 1 in 6, followed by another 1 in 6. "8, 8" happens `(5/36)*(5/36)` times (because the chance of "8" was 5/36) "9, 9", "10, 10", "11, 11", and "12,12" come up "(4/36)(4/36), "(3/36)(3/36)", "(2/36)(2/36)", and (1/36)(1/36) respectively. 2-6 is a mirror image of 8-12. Add it all up and you get
+* (1+4+9+16+25+36+25+16+9+4+1)/1296 (which is 36X36), or 8.8% of the time.
+
+You may notice that the calculations for probabilities can get really painful, really fast. The good news is that there are general formulas you can plug stuff into, like the 2kN "combinatorial" formula that computes odds for an arbitrary number of rolls of an arbitrary size of dice, but if you don't think of yourself as a math person, you might stare at it for a while but not quite get it. Hopefully, you can use the stories provided here to understand why the formula works, and for a sanity check if it seems to go wrong.
+
+#### There is also a formula for the results of multiple draws from a deck of cards. This is called "selection without replacement" because you can't get the same card twice, while rolling dice is "selection with replacement" because you can get the same roll repeatedly.
+
+* You should be able to reason out the probabilities for cards in theory by using the probability branch stuff. Like, what's the chance of drawing all 4 aces in 4 draws? The first time, you have a 4/52 chance of pulling an ace, but the second time you only have 3/51, and then 2/50 and 1/49. If you're dealing with "at least" problems, though, it gets horrible real fast. If you want to know the odds of drawing 3 or more hearts in a hand of 7, you've gotta cope with the fact that your first draw has a 1/4 chance of hearts, but your second draw has either a 12/51 11/51 chance, and those cases are themselves not equally likely.
+* Basically, anything with cards is not computable by hand, and you should just learn the formulas if you need to do it
